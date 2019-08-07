@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#000000" />
+  <title>Process Log Files</title>
+  <style type="text/css">
+  .drop-zone {
+    border: 2px dashed #bbb;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+    text-align: center;
+    font: 1.25rem bold;
+    color: #bbb;
+  }
+  
+  div {
+    margin-bottom: 1.5em;
+  }
+  textarea {
+    border: 1px dashed #0000f0;
+    display: block;
+    width: 100%;
+    height: 25em;
+  }
+  .fixed-width {
+    width: 40%;
+    line-height: 1.5em;
+    padding: 5px;
+    margin-right: 2em;
+  }
+</style>
+</head>
+
+<body data-hyper-browser-disabled>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="hyper-office-add-in-root"></div>
+  <div>
+    <input type="checkbox" id="delete-blank-lines" checked>
+    <label for="delete-blank-lines">Delete blank lines</label>
+  </div>
+  <div>
+    <input type="checkbox" id="strip-white-spaces" checked>
+    <label for="strip-white-spaces">Strip white spaces</label>
+  </div>
+  <div>
+    <label for="replace-pattern">Replace</label>
+    <input class="fixed-width" type="text" id="replace-pattern" value="^22:.+$" placeholder="Enter RegExp here...">
+    <label for="replace-with">with</label>
+    <input class="fixed-width" type="text" id="replace-with" value="'$0'">
+  </div>
+  <div id="upload" class="drop-zone" dropzone draggable="true">Drop Files Here</div>
+  <div id="error"></div>
+  <ul id="files"></ul>
+  <textarea readonly id="output"></textarea>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
